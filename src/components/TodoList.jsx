@@ -63,7 +63,7 @@ function TodoList() {
   const TodoContent = ({ index, data }) => {
     return (
       <>
-        <Grid item xs={12} md={10}>
+        <Grid item xs={9} md={10}>
           <Typography
             variant="body2"
             textAlign="justify"
@@ -74,7 +74,7 @@ function TodoList() {
           </Typography>
         </Grid>
 
-        <Grid item xs={12} md={2}>
+        <Grid item xs={3} md={2}>
           <Stack direction="row" justifyContent="right">
             <IconButton
               onClick={() => handleEdit(data.id, data.task)}
@@ -99,7 +99,7 @@ function TodoList() {
   };
 
   return (
-    <Box m={5}>
+    <Box m={{ md: 5, xs: 3 }}>
       <Grid container justifyContent="center">
         <Grid item xs={12} md={4}>
           <Card elevation={3}>
@@ -113,7 +113,7 @@ function TodoList() {
             />
             <CardContent sx={{ padding: 4 }}>
               <Grid container columnSpacing={2} rowSpacing={{ md: 2, xs: 1 }}>
-                <Grid item xs={12} md={10} mb={4}>
+                <Grid item xs={12} md={10}>
                   <TextField
                     value={values.task}
                     onChange={(e) => handleChange(e)}
@@ -122,7 +122,7 @@ function TodoList() {
                   />
                 </Grid>
 
-                <Grid item xs={12} md={2} align="right">
+                <Grid item xs={12} md={2} mb={2} align="right">
                   <Button
                     variant="contained"
                     onClick={handleAdd}
